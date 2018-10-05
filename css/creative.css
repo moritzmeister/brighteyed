@@ -293,7 +293,7 @@ header.masthead p {
   font-size: 18px;
 }
 
-.portfolio-box:hover .portfolio-box-caption {
+.portfolio-box:hover .portfolio-box-caption, .portfolio-box:active {
   opacity: 1;
 }
 
