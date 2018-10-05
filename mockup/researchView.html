@@ -16,28 +16,72 @@
         <div class="bottom">
             <div class="container">
                 <h2 class="icome__title">Patients</h2>
-                <input type="text" id="myInput" onkeyup="searchItem()" placeholder="Search for names..">
+                <input type="text" id="myInput" onkeyup="searchItem()" placeholder="Search for diseases..">
                 <table class="income__list" id="myTable">
                   <tr class="header">
-                    <th style="width:60%;">ID</th>
-                    <th style="width:40%;">Date</th>
-                    <th style="width:40%;">City</th>
-                    <th style="width:40%;">Age</th>
-                    <th style="width:40%;">Gender</th>
-                    <th style="width:40%;">Disease</th>
-                    <th style="width:40%;">City</th>
-                    <th style="width:40%;">Cured?</th>
+                    <th style="width:2%;">ID</th>
+                    <th style="width:20%;">Date</th>
+                    <th style="width:10%;">City</th>
+                    <th style="width:5%;">Age</th>
+                    <th style="width:5%;">Gender</th>
+                    <th style="width:10%;">Disease</th>
+                    <th style="width:20%;">Treatment</th>
+                    <th style="width:8%;">Cured ?</th>
                 </tr>
                 <tr>
-                    <td>Alfreds Futterkiste</td>
-                    <td>Madrid</td>
-                    <td>gxvz123jjmk</td>
-                </tr>
-                <tr>
-                    <td><a href="doctorPatientView.html">Berglunds snabbkop</a></td>
+                    <td>1</td>
+                    <td>20 Jul 2017</td>
                     <td>Oulu</td>
-                    <td>gjtun2291qwe</td>
+                    <td>33</td>
+                    <td>M</td>
+                    <td>Myopia</td>
+                    <td>Eye Yoga</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>2 Jul 2011</td>
+                    <td>Aachen</td>
+                    <td>11</td>
+                    <td>F</td>
+                    <td>Astigmatism</td>
+                    <td>Refractive surgery</td>
+                    <td>Yes</td>
+                </tr>
+                 <tr>
+                    <td>3</td>
+                    <td>12 Jan 2015</td>
+                    <td>Bruxelles</td>
+                    <td>25</td>
+                    <td>M</td>
+                    <td>Myopia</td>
+                    <td>Eyeglasses</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>1 Nov 2008</td>
+                    <td>Budapest</td>
+                    <td>35</td>
+                    <td>F</td>
+                    <td>Red eyes</td>
+                    <td>Visine</td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>12 Oct 2013</td>
+                    <td>Budapest</td>
+                    <td>18</td>
+                    <td>F</td>
+                    <td>Myopia</td>
+                    <td>Blueberries and carrots</td>
+                    <td>Yes</td>
+                </tr>
                 </table> 
+                <h2 class="icome__title">
+                    <a href="patientRecords.csv" style="text-decoration:none; font-size: 18px; color: #28B9B5;" download><img src="css/download.png" alt="AltFile" width="40" height="40">
+                Download as csv</a></h2>
             </div>    
         <script src="researchApp.js"></script>
     </body>

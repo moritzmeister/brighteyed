@@ -24,17 +24,6 @@ var budgetController = (function() {
             data.allItems['inc'].unshift(newItem);
             return newItem;
         },
-        deleteItem: function(ID) {
-            var ids, index;
-            
-            ids = data.allItems['inc'].map(function(current) {
-                return current.id;
-            });
-            index = ids.indexOf(ID);
-            if (index !== -1) {
-                data.allItems['inc'].splice(index, 1);
-            }
-        },
         testing: function() {
             console.log(data);
         }
@@ -57,10 +46,6 @@ var UIController = (function() {
                 hash: document.querySelector(DOMstrings.inputHash).value
             }
         },
-        deleteListItem: function(selectorID) {
-            var element = document.getElementById(selectorID);
-            element.parentNode.removeChild(element);  
-        },
         clearFields : function() {
             var fields, fieldsArr;
             fields = document.querySelectorAll(DOMstrings.inputDescription + ', ' + DOMstrings.inputCity + ', ' + DOMstrings.inputHash);
@@ -76,7 +61,6 @@ var UIController = (function() {
         addListItem: function(obj) {
             var html, newHtml, element, itemPercentage;
             element = DOMstrings.incomeContainer;
-            //html = '<div class="item clearfix" id="inc-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__city">%city%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
             html = '<tr id="inc-%id%"><td class="item__description">%description%</td><td class="item__city">%city%</td><td class="item__hash">%hash%</td></tr>';
             
             newHtml = html.replace('%id%', obj.id);
@@ -99,7 +83,6 @@ var controller = (function(budgetCtrl, UICtrl) {
                 ctrlAddItem();
             }
         });
-        document.querySelector('.container').addEventListener('click', ctrlDeleteItem);
     };
     var ctrlAddItem = function() {
         //get input data & add to controller.
@@ -110,17 +93,6 @@ var controller = (function(budgetCtrl, UICtrl) {
             UICtrl.addListItem(newItem);
             UICtrl.clearFields();
         }
-    };
-    var ctrlDeleteItem = function(event) {
-        var itemID, split, ID;
-        itemID = event.target.parentNode.parentNode.parentNode.id;
-        
-        if (itemID){
-            splitID = itemID.split('-');
-            ID = parseInt(splitID[1]);
-        }
-        budgetCtrl.deleteItem(ID);
-        UICtrl.deleteListItem(itemID);
     };
     return {
         init: function() {
@@ -136,6 +108,7 @@ controller.init();
 var searchItem = function () {
       var input, filter, table, tr, td, i;
       input = document.getElementById("myInput");
+      console.log("myInput");
       filter = input.value.toUpperCase();
       table = document.getElementById("myTable");
       tr = table.getElementsByTagName("tr");

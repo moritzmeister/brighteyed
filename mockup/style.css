@@ -32,8 +32,8 @@ body {
 **********************************************/
 
 .top {
-    height: 40vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(header.jpg);
+    height: 20vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(css/header.jpg);
     background-size: cover;
     background-position: center;
     position: relative;
@@ -41,7 +41,7 @@ body {
 
 .budget {
     position: absolute;
-    width: 350px;
+    width: 850px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -49,10 +49,10 @@ body {
 }
 
 .budget__title {
-    font-size: 18px;
     text-align: center;
     margin-bottom: 10px;
-    font-weight: 300;
+    font-size: 40px;
+    font-weight: 400;
 }
 
 .budget__value {
@@ -186,21 +186,15 @@ body {
     width: 475px;
     margin-right: 50px;
 }
-
-.expenses {
-    float: left;
-    width: 475px;
-}
-
 h2 {
-    text-transform: uppercase;
     font-size: 18px;
     font-weight: 400;
     margin-bottom: 15px;
 }
 
-.icome__title { color: #28B9B5; }
-.expenses__title { color: #FF5049; }
+.icome__title { 
+    font-size: 26px;
+    color: #28B9B5; }
 
 .item {
     padding: 13px;
@@ -279,11 +273,15 @@ h2 {
 
 
 #myInput {
-    width: 100%; /* Full-width */
-    font-size: 16px; /* Increase font-size */
-    padding: 12px 20px 12px 40px; /* Add some padding */
-    border: 1px solid #ddd; /* Add a grey border */
-    margin-bottom: 12px; /* Add some space below the input */
+  background-image: url('css/searchicon.png');
+  background-position: 1px 1px;
+  background-size: 40px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
 }
 
 #myTable {
