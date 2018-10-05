@@ -72,6 +72,12 @@ h6 {
   background-color: rgba(38, 128, 120, 0.6);
 }
 
+.block-white {
+  background-color: rgba(255, 255, 255, 0.614);
+  border-radius: 30px;
+  padding: 0.2rem 1rem;
+}
+
 section {
   padding: 8rem 0;
 }
