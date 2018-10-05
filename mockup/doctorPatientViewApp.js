@@ -23,17 +23,6 @@ var budgetController = (function() {
             data.allItems['inc'].unshift(newItem);
             return newItem;
         },
-        deleteItem: function(ID) {
-            var ids, index;
-            
-            ids = data.allItems['inc'].map(function(current) {
-                return current.id;
-            });
-            index = ids.indexOf(ID);
-            if (index !== -1) {
-                data.allItems['inc'].splice(index, 1);
-            }
-        },
         testing: function() {
             console.log(data);
         }
@@ -54,10 +43,6 @@ var UIController = (function() {
                 record: document.querySelector(DOMstrings.inputRecord).value
             }
         },
-        deleteListItem: function(selectorID) {
-            var element = document.getElementById(selectorID);
-            element.parentNode.removeChild(element);  
-        },
         clearFields : function() {
             var fields, fieldsArr;
             fields = document.querySelectorAll(DOMstrings.inputDescription + ', ' + DOMstrings.inputRecord);
@@ -73,7 +58,7 @@ var UIController = (function() {
         addListItem: function(obj) {
             var html, newHtml, element, itemPercentage;
             element = DOMstrings.incomeContainer;
-            html = '<div class="item clearfix" id="inc-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__record">%record%</div><div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>';
+            html = '<div class="item clearfix" id="inc-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__record">%record%</div></div></div>';
             newHtml = html.replace('%id%', obj.id);
             newHtml = newHtml.replace('%description%', obj.description);
             newHtml = newHtml.replace('%record%', obj.record);
@@ -93,7 +78,6 @@ var controller = (function(budgetCtrl, UICtrl) {
                 ctrlAddItem();
             }
         });
-        document.querySelector('.container').addEventListener('click', ctrlDeleteItem);
     };
     var ctrlAddItem = function() {
         //get input data & add to controller.
@@ -104,17 +88,6 @@ var controller = (function(budgetCtrl, UICtrl) {
             UICtrl.addListItem(newItem);
             UICtrl.clearFields();
         }
-    };
-    var ctrlDeleteItem = function(event) {
-        var itemID, split, ID;
-        itemID = event.target.parentNode.parentNode.parentNode.id;
-        
-        if (itemID){
-            splitID = itemID.split('-');
-            ID = parseInt(splitID[1]);
-        }
-        budgetCtrl.deleteItem(ID);
-        UICtrl.deleteListItem(itemID);
     };
     return {
         init: function() {

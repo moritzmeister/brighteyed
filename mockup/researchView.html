@@ -10,32 +10,26 @@
     <body>
         <div class="top">
             <div class="budget">
-                <div class="budget__title">
-                Select the desired patient or add a new one</div>
+                <div class="budget__title">View anonymized patients' data</div>
             </div>
         </div>
         <div class="bottom">
-            <div class="add">
-                <div class="add__container">
-                    <h2 class="icome__title"> Add a new patient</h2>
-                    <input type="text" class="add__description" placeholder="Patient's name">
-                    <input type="text" class="add__city" placeholder="City">
-                    <input type="text" class="add__hash" placeholder="Patient's hash">
-                    <button class="add__btn"><i class="ion-ios-checkmark-outline"></i></button>
-                </div>
-            </div>
             <div class="container">
                 <h2 class="icome__title">Patients</h2>
                 <input type="text" id="myInput" onkeyup="searchItem()" placeholder="Search for names..">
-
                 <table class="income__list" id="myTable">
                   <tr class="header">
-                    <th style="width:60%;">Name</th>
+                    <th style="width:60%;">ID</th>
+                    <th style="width:40%;">Date</th>
                     <th style="width:40%;">City</th>
-                    <th style="width:40%;">Hash</th>
+                    <th style="width:40%;">Age</th>
+                    <th style="width:40%;">Gender</th>
+                    <th style="width:40%;">Disease</th>
+                    <th style="width:40%;">City</th>
+                    <th style="width:40%;">Cured?</th>
                 </tr>
                 <tr>
-                    <td><a href="doctorPatientView.html">Alfreds Futterkiste</a></td>
+                    <td>Alfreds Futterkiste</td>
                     <td>Madrid</td>
                     <td>gxvz123jjmk</td>
                 </tr>
@@ -45,6 +39,6 @@
                     <td>gjtun2291qwe</td>
                 </table> 
             </div>    
-        <script src="doctorSearchApp.js"></script>
+        <script src="researchApp.js"></script>
     </body>
 </html>
