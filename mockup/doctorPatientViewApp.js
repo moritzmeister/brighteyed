@@ -20,7 +20,7 @@ var budgetController = (function() {
                 ID = 0;
             }
             newItem = new Income(ID, des, record);
-            data.allItems['inc'].unshift(newItem);
+            data.allItems['inc'].push(newItem);
             return newItem;
         },
         testing: function() {
