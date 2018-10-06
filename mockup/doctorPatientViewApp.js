@@ -58,7 +58,7 @@ var UIController = (function() {
         addListItem: function(obj) {
             var html, newHtml, element, itemPercentage;
             element = DOMstrings.incomeContainer;
-            html = '<div class="item clearfix" id="inc-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__record">%record%</div></div></div>';
+            html = '<tr id="inc-%id%"><td class="item__description">%description%</td><td class="item__record">%record%</td></tr>';
             newHtml = html.replace('%id%', obj.id);
             newHtml = newHtml.replace('%description%', obj.description);
             newHtml = newHtml.replace('%record%', obj.record);
