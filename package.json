@@ -16,10 +16,10 @@
     "jsdom": "^11.10.0",
     "jsonfile": "^4.0.0",
     "morgan": "~1.9.0",
-    "npm": "^6.0.1",
+    "npm": "^6.4.1",
     "random-pick": "^0.1.1",
     "request": "~2.85.0",
     "twitter": "^1.7.1",
-    "url-parse": "~1.4.0"
+    "url-parse": "^1.4.3"
   }
 }
