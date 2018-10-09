@@ -33,7 +33,7 @@ body {
 
 .top {
     height: 20vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(css/header.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url(images/header.jpg);
     background-size: cover;
     background-position: center;
     position: relative;
@@ -273,7 +273,7 @@ h2 {
 
 
 #myInput {
-  background-image: url('css/searchicon.png');
+  background-image: url('images/searchicon.png');
   background-position: 1px 1px;
   background-size: 40px;
   background-repeat: no-repeat;

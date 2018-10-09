@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet" type="text/css">
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" href="style.css">
+    <title>DoctorChain</title>
+</head>
+<body>
+<div class="top">
+    <div class="budget">
+        <div class="budget__title">
+            View or add medical records of the patient</div>
+    </div>
+</div>
+<div class="bottom">
+    <div class="add">
+        <div class="add__container">
+            <input type="text" class="add__description" placeholder="Add a date">
+            <input type="text" class="add__record" placeholder="Record">
+            <button class="add__btn"><i class="ion-ios-checkmark-outline"></i></button>
+        </div>
+    </div>
+    <div class="container clearfix">
+        <div class="income">
+            <h2 class="icome__title">Alfredo Gonzales's records</h2>
+
+            <table class="income__list" id="myTable">
+                <tr class="header">
+                    <th style="width:60%;">Date</th>
+                    <th style="width:40%;">Medical record</th>
+                </tr>
+                <tr>
+                    <td>20 Jul 2017</td>
+                    <td>Flu</td>
+                </tr>
+                <tr>
+                    <td>10 Feb 2013</td>
+                    <td>Headache</td>
+                </tr>
+        </div>
+    </div>
+</div>
+<script src="doctorPatientViewApp.js"></script>
+</body>
+</html>
