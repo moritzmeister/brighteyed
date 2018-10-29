@@ -6,7 +6,7 @@ This is a project developed by Shambhavi Singh, Nicolae Righeriu, Sergei Bordea,
 
 ### 1. Installation of a local hyperledger fabric runtime (if not done previously):
 
-The repository contains the scripts download a local Hyperledger Fabric runtime to deploy our business network to and in order to run the application. Make sure you have installed all the requirements mentioned below.
+The repository contains the scripts to download a local Hyperledger Fabric runtime to deploy our business network to and in order to run the application. Make sure you have installed all the requirements mentioned below.
 
 If you've previously used an older version of Hyperledger Composer and are now setting up a new install, you may want to kill and remove all previous Docker containers, which you can do with these commands:
 ```
@@ -17,7 +17,7 @@ docker rmi $(docker images dev-* -q)
 
 Download required fabric runtime:
 ```
-cd ~/fabric-servers
+cd fabric-servers
 export FABRIC_VERSION=hlfv12
 ./downloadFabric.sh
 ```
@@ -25,7 +25,7 @@ export FABRIC_VERSION=hlfv12
 You control your runtime using a set of scripts which you'll find in *~/fabric-servers*.
 The first time you start up a new runtime, you'll need to run the start script, then generate a PeerAdmin card. However, note that we already generated a PeerAdmin card, this is only necessary if you used the teardown script before:
 ```
-cd ~/fabric-dev-servers
+cd fabric-servers
 export FABRIC_VERSION=hlfv12
 ./startFabric.sh
 ```
@@ -36,7 +36,7 @@ export FABRIC_VERSION=hlfv12
 ### 3. Deploying the brighteyed business network version 0.0.1
 1. To deploy the business network on your fabric, from the *brighteyed-network* directory, run the following command:
 ```
-cd ~/brighteyed-network
+cd brighteyed-network
 composer network install --card PeerAdmin@hlfv1 --archiveFile brighteyed-network@0.0.1.bna
 ```
 The composer network install command requires a PeerAdmin business network card (in this case one has been created and imported in advance), and the file path of the .bna which defines the business network.
@@ -67,7 +67,8 @@ composer-rest-server -c admin@brighteyed-network -n never -u true -w true
 ### 5. Start Node.js web-app:
 Navigate to the *brighteyed-app* directory and finally start the app:
 ```
-cd ~/brighteyed-app
+cd brighteyed-app
+npm install (first time only)
 npm start
 ```
 
