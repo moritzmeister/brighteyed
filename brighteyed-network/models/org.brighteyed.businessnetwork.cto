@@ -13,9 +13,11 @@
  */
 
 /**
- * My commodity trading network
+ * Write your model definitions here
  */
+
 namespace org.brighteyed.businessnetwork
+
 asset Commodity identified by tradingSymbol {
     o String tradingSymbol
     o String description

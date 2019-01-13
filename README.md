@@ -22,7 +22,7 @@ export FABRIC_VERSION=hlfv12
 ./downloadFabric.sh
 ```
 ### 2. Start and stop fabric:
-You control your runtime using a set of scripts which you'll find in *~/fabric-servers*.
+You control your runtime using a set of scripts which you'll find in *fabric-servers*.
 The first time you start up a new runtime, you'll need to run the start script, then generate a PeerAdmin card. However, note that we already generated a PeerAdmin card, this is only necessary if you used the teardown script before:
 ```
 cd fabric-servers
