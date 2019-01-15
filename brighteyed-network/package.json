@@ -4,7 +4,7 @@
   },
   "name": "brighteyed-network",
   "version": "0.0.1",
-  "description": "Business Network for the brighteyed project.",
+  "description": "Access control network for brighteyed project.",
   "scripts": {
     "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/brighteyed-network.bna",
     "pretest": "npm run lint",

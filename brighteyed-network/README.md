@@ -1,3 +1,3 @@
 # brighteyed-network
 
-Business Network for the brighteyed project.
+Access control network for brighteyed project.

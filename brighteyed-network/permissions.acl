@@ -13,20 +13,53 @@
  */
 
 /**
- * Access control rules for tutorial-network
+ * Sample access control list.
  */
-rule Default {
-    description: "Allow all participants access to all resources"
-    participant: "ANY"
+rule EverybodyCanReadEverything {
+    description: "Allow all participants read access to all resources"
+    participant: "org.brighteyed.network.SampleParticipant"
+    operation: READ
+    resource: "org.brighteyed.network.*"
+    action: ALLOW
+}
+
+rule EverybodyCanSubmitTransactions {
+    description: "Allow all participants to submit transactions"
+    participant: "org.brighteyed.network.SampleParticipant"
+    operation: CREATE
+    resource: "org.brighteyed.network.SampleTransaction"
+    action: ALLOW
+}
+
+rule OwnerHasFullAccessToTheirAssets {
+    description: "Allow all participants full access to their assets"
+    participant(p): "org.brighteyed.network.SampleParticipant"
     operation: ALL
-    resource: "org.brighteyed.businessnetwork.*"
+    resource(r): "org.brighteyed.network.SampleAsset"
+    condition: (r.owner.getIdentifier() === p.getIdentifier())
     action: ALLOW
 }
 
 rule SystemACL {
   description:  "System ACL to permit all access"
-  participant: "ANY"
+  participant: "org.hyperledger.composer.system.Participant"
   operation: ALL
   resource: "org.hyperledger.composer.system.**"
   action: ALLOW
+}
+
+rule NetworkAdminUser {
+    description: "Grant business network administrators full access to user resources"
+    participant: "org.hyperledger.composer.system.NetworkAdmin"
+    operation: ALL
+    resource: "**"
+    action: ALLOW
+}
+
+rule NetworkAdminSystem {
+    description: "Grant business network administrators full access to system resources"
+    participant: "org.hyperledger.composer.system.NetworkAdmin"
+    operation: ALL
+    resource: "org.hyperledger.composer.system.**"
+    action: ALLOW
 }
