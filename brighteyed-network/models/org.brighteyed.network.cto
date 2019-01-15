@@ -54,3 +54,12 @@ transaction RevokeAccess extends AccessTransaction {
 event AccessEvent {
   o AccessTransaction accessTransaction
 }
+
+transaction AddRecordTransaction {
+  o Record addedRecord
+  --> Patient patient
+}
+
+event AddRecordEvent {
+  o AddRecordTransaction addRecordTransaction
+}

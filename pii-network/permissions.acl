@@ -16,7 +16,7 @@ rule AuthorizeAccessTransaction {
     description: "Allow all participants to submit AuthorizeAccess transactions"
     participant: "ANY"
     operation: CREATE
-    resource: "org.acme.pii.AuthorizeAccess"
+    resource: "org.brighteyed.piinetwork.AuthorizeAccess"
     action: ALLOW
 }
 
@@ -24,24 +24,24 @@ rule RevokeAccessTransaction {
     description: "Allow all participants to submit RevokeAccess transactions"
     participant: "ANY"
     operation: CREATE
-    resource: "org.acme.pii.RevokeAccess"
+    resource: "org.brighteyed.piinetwork.RevokeAccess"
     action: ALLOW
 }
 
 rule OwnRecordFullAccess {
     description: "Allow all participants full access to their own record"
-    participant(p): "org.acme.pii.Member"
+    participant(p): "org.brighteyed.piinetwork.Member"
     operation: ALL
-    resource(r): "org.acme.pii.Member"
+    resource(r): "org.brighteyed.piinetwork.Member"
     condition: (r.getIdentifier() === p.getIdentifier())
     action: ALLOW
 }
 
 rule ForeignRecordConditionalAccess {
     description: "Allow participants access to other people's records if granted"
-    participant(p): "org.acme.pii.Member"
+    participant(p): "org.brighteyed.piinetwork.Member"
     operation: ALL
-    resource(r): "org.acme.pii.Member"
+    resource(r): "org.brighteyed.piinetwork.Member"
     condition: (r.authorized && r.authorized.indexOf(p.getIdentifier()) > -1)
     action: ALLOW
 }
