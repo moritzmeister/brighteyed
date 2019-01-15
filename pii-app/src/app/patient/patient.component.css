@@ -1,0 +1,35 @@
+table#patientHistory{
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  float:left;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+table#authorizations{
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  padding: 20px;
+}
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+#history{
+  float:left;
+  width: 50%;
+  margin-left: 20px;
+}
+#auth{
+	float:right;
+	  width: 37%;
+}

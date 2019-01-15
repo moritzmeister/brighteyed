@@ -18,11 +18,12 @@
         <p class="navbar-brand">pii-app</p>
       </div>
       <ul class="nav navbar-nav">
-        <li class="dropdown active">
-            <a class="dropdown-toggle" data-toggle="dropdown">Assets</a>
-            <ul class="dropdown-menu scrollable-menu">
-              
-            </ul>
+        <li>
+          <a [routerLink]="['/patient']">Patient</a>
+        </li>
+        <li>
+          <a [routerLink]="['/doctor']">Doctor</a>
+
         </li>
         <li class="dropdown active">
           <a class="dropdown-toggle" data-toggle="dropdown">Participants</a>

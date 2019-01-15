@@ -26,15 +26,18 @@ import { MemberComponent } from './Member/Member.component';
 
 import { AuthorizeAccessComponent } from './AuthorizeAccess/AuthorizeAccess.component';
 import { RevokeAccessComponent } from './RevokeAccess/RevokeAccess.component';
+import { PatientComponent } from './patient/patient.component';
+import { DoctorComponent } from './doctor/doctor.component';
 
   @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-,
     MemberComponent,
     AuthorizeAccessComponent,
-    RevokeAccessComponent
+    RevokeAccessComponent,
+    PatientComponent,
+    DoctorComponent,
   ],
   imports: [
     BrowserModule,
