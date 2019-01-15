@@ -14,36 +14,61 @@
 
 rule AuthorizeAccessTransaction {
     description: "Allow all participants to submit AuthorizeAccess transactions"
-    participant: "ANY"
+    participant: "org.brighteyed.network.Patient"
     operation: CREATE
-    resource: "org.acme.pii.AuthorizeAccess"
+    resource: "org.brighteyed.network.AuthorizeAccess"
+    action: ALLOW
+}
+
+rule UpdateDoctorMypatients {
+    description: "Allow all Patients to update myPatients list of a doctor"
+    participant: "org.brighteyed.network.Patient"
+    operation: READ, UPDATE
+    resource: "org.brighteyed.network.Doctor"
     action: ALLOW
 }
 
 rule RevokeAccessTransaction {
     description: "Allow all participants to submit RevokeAccess transactions"
-    participant: "ANY"
+    participant: "org.brighteyed.network.Patient"
     operation: CREATE
-    resource: "org.acme.pii.RevokeAccess"
+    resource: "org.brighteyed.network.RevokeAccess"
+    action: ALLOW
+}
+
+rule AddRecordTransaction {
+    description: "Allow all doctors to submit AddRecord transactions"
+    participant: "org.brighteyed.network.Doctor"
+    operation: CREATE
+    resource: "org.brighteyed.network.AddRecordTransaction"
     action: ALLOW
 }
 
 rule OwnRecordFullAccess {
     description: "Allow all participants full access to their own record"
-    participant(p): "org.acme.pii.Member"
+    participant(p): "org.brighteyed.network.Person"
     operation: ALL
-    resource(r): "org.acme.pii.Member"
+    resource(r): "org.brighteyed.network.Person"
     condition: (r.getIdentifier() === p.getIdentifier())
     action: ALLOW
 }
 
 rule ForeignRecordConditionalAccess {
     description: "Allow participants access to other people's records if granted"
-    participant(p): "org.acme.pii.Member"
-    operation: ALL
-    resource(r): "org.acme.pii.Member"
+    participant(p): "org.brighteyed.network.Doctor"
+    operation: READ, CREATE, UPDATE
+    resource(r): "org.brighteyed.network.Patient"
     condition: (r.authorized && r.authorized.indexOf(p.getIdentifier()) > -1)
     action: ALLOW
+}
+
+rule PersonsSeeOwnHistoryOnly {
+  description: "Persons should be able to see the history of their own transactions only"
+  participant(t): "org.brighteyed.network.Person"
+  operation: READ
+  resource(v): "org.hyperledger.composer.system.HistorianRecord"
+  condition: (v.participantInvoking.getIdentifier() != t.getIdentifier())
+  action: DENY
 }
 
 rule SystemACL {
