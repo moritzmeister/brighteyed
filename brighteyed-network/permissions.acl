@@ -20,6 +20,14 @@ rule AuthorizeAccessTransaction {
     action: ALLOW
 }
 
+rule UpdateDoctorMypatients {
+    description: "Allow all Patients to update myPatients list of a doctor"
+    participant: "org.brighteyed.network.Patient"
+    operation: READ, UPDATE
+    resource: "org.brighteyed.network.Doctor"
+    action: ALLOW
+}
+
 rule RevokeAccessTransaction {
     description: "Allow all participants to submit RevokeAccess transactions"
     participant: "org.brighteyed.network.Patient"
@@ -48,10 +56,19 @@ rule OwnRecordFullAccess {
 rule ForeignRecordConditionalAccess {
     description: "Allow participants access to other people's records if granted"
     participant(p): "org.brighteyed.network.Doctor"
-    operation: ALL
+    operation: READ, CREATE, UPDATE
     resource(r): "org.brighteyed.network.Patient"
     condition: (r.authorized && r.authorized.indexOf(p.getIdentifier()) > -1)
     action: ALLOW
+}
+
+rule PersonsSeeOwnHistoryOnly {
+  description: "Persons should be able to see the history of their own transactions only"
+  participant(t): "org.brighteyed.network.Person"
+  operation: READ
+  resource(v): "org.hyperledger.composer.system.HistorianRecord"
+  condition: (v.participantInvoking.getIdentifier() != t.getIdentifier())
+  action: DENY
 }
 
 rule SystemACL {

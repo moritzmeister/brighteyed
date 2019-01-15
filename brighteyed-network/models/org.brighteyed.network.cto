@@ -22,7 +22,7 @@ concept Record {
   o DateTime date
   o String incident
   o String[] prescriptions
-  o Doctor doctor
+  --> Doctor doctor
 }
 
 abstract participant Person identified by nie {
@@ -33,7 +33,7 @@ abstract participant Person identified by nie {
 }
 
 participant Doctor extends Person {
-  o Patient[] myPatients
+  o String[] myPatients
 }
 
 participant Patient extends Person {
@@ -42,7 +42,7 @@ participant Patient extends Person {
 }
 
 abstract transaction AccessTransaction {
-  o String nie
+  --> Doctor doctor
 }
 
 transaction AuthorizeAccess extends AccessTransaction {
@@ -63,3 +63,4 @@ transaction AddRecordTransaction {
 event AddRecordEvent {
   o AddRecordTransaction addRecordTransaction
 }
+

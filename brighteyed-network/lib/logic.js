@@ -25,7 +25,7 @@
 async function authorizeAccess(authorize) {  // eslint-disable-line no-unused-vars
 
     const me = getCurrentParticipant();
-    console.log('**** AUTH: ' + me.getIdentifier() + ' granting access to ' + authorize.nie);
+    console.log('**** AUTH: ' + me.getIdentifier() + ' granting access to ' + authorize.doctor.nie);
 
     if (!me) {
         throw new Error('A participant/certificate mapping does not exist.');
@@ -38,20 +38,22 @@ async function authorizeAccess(authorize) {  // eslint-disable-line no-unused-va
         me.authorized = [];
     }
     else {
-        index = me.authorized.indexOf(authorize.nie);
+        index = me.authorized.indexOf(authorize.doctor.nie);
     }
 
     if (index < 0) {
-        me.authorized.push(authorize.nie);
-
+        me.authorized.push(authorize.doctor.nie);
+		authorize.doctor.myPatients.push(me.nie);
         // emit an event
         const event = getFactory().newEvent('org.brighteyed.network', 'AccessEvent');
         event.accessTransaction = authorize;
         emit(event);
 
         // persist the state of the member
-        const memberRegistry = await getParticipantRegistry('org.brighteyed.network.Patient');
-        await memberRegistry.update(me);
+        const patientRegistry = await getParticipantRegistry('org.brighteyed.network.Patient');
+      	const doctorRegistry = await getParticipantRegistry('org.brighteyed.network.Doctor');
+        await patientRegistry.update(me);
+      	await doctorRegistry.update(authorize.doctor);
     }
 }
 
@@ -63,14 +65,16 @@ async function authorizeAccess(authorize) {  // eslint-disable-line no-unused-va
 async function revokeAccess(revoke) {  // eslint-disable-line no-unused-vars
 
     const me = getCurrentParticipant();
-    console.log('**** REVOKE: ' + me.getIdentifier() + ' revoking access to ' + revoke.nie);
+    console.log('**** REVOKE: ' + me.getIdentifier() + ' revoking access to ' + revoke.doctor.nie);
 
     if (!me) {
         throw new Error('A participant/certificate mapping does not exist.');
     }
 
     // if the member is authorized, we remove them
-    const index = me.authorized ? me.authorized.indexOf(revoke.nie) : -1;
+    const index = me.authorized ? me.authorized.indexOf(revoke.doctor.nie) : -1;
+  
+ 	const index_patient = revoke.doctor.myPatients ? revoke.doctor.myPatients.indexOf(me.nie) : -1;
 
     if (index > -1) {
         me.authorized.splice(index, 1);
@@ -83,6 +87,14 @@ async function revokeAccess(revoke) {  // eslint-disable-line no-unused-vars
         // persist the state of the member
         const memberRegistry = await getParticipantRegistry('org.brighteyed.network.Patient');
         await memberRegistry.update(me);
+    }
+  
+  	if (index_patient > -1) {
+        revoke.doctor.myPatients.splice(index_patient, 1);
+
+        // persist the state of the member
+        const doctorRegistry = await getParticipantRegistry('org.brighteyed.network.Doctor');
+        await doctorRegistry.update(revoke.doctor);
     }
 }
 
