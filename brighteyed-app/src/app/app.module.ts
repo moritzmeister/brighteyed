@@ -33,7 +33,6 @@ import { AddRecordTransactionComponent } from './AddRecordTransaction/AddRecordT
   declarations: [
     AppComponent,
     HomeComponent,
-,
     DoctorComponent,
     PatientComponent,
     AuthorizeAccessComponent,
