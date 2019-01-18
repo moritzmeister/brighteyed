@@ -21,6 +21,8 @@ import { HomeComponent } from './home/home.component';
 import { DoctorComponent } from './Doctor/Doctor.component';
 import { PatientComponent } from './Patient/Patient.component';
 
+import { PatientviewComponent } from './patientview/patientview.component';
+
 import { AuthorizeAccessComponent } from './AuthorizeAccess/AuthorizeAccess.component';
 import { RevokeAccessComponent } from './RevokeAccess/RevokeAccess.component';
 import { AddRecordTransactionComponent } from './AddRecordTransaction/AddRecordTransaction.component';
@@ -32,6 +34,7 @@ const routes: Routes = [
   { path: 'AuthorizeAccess', component: AuthorizeAccessComponent },
   { path: 'RevokeAccess', component: RevokeAccessComponent },
   { path: 'AddRecordTransaction', component: AddRecordTransactionComponent },
+  { path: 'PatientView', component: PatientviewComponent},
   { path: '**', redirectTo: '' }
 ];
 
