@@ -14,11 +14,10 @@
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
 import { HomeComponent } from './home/home.component';
-
-
 import { MemberComponent } from './Member/Member.component';
+import { PatientComponent} from './patient/patient.component';
+import { DoctorComponent } from './doctor/doctor.component';
 
 import { AuthorizeAccessComponent } from './AuthorizeAccess/AuthorizeAccess.component';
 import { RevokeAccessComponent } from './RevokeAccess/RevokeAccess.component';
@@ -28,6 +27,8 @@ const routes: Routes = [
   { path: 'Member', component: MemberComponent },
   { path: 'AuthorizeAccess', component: AuthorizeAccessComponent },
   { path: 'RevokeAccess', component: RevokeAccessComponent },
+  { path: 'patient', component: PatientComponent },
+  { path: 'doctor', component: DoctorComponent},
   { path: '**', redirectTo: '' }
 ];
 
