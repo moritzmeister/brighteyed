@@ -16,25 +16,23 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
+import { LandingpageComponent } from './landingpage/landingpage.component';
 
 
 import { DoctorComponent } from './Doctor/Doctor.component';
 import { PatientComponent } from './Patient/Patient.component';
-
-import { PatientviewComponent } from './patientview/patientview.component';
 
 import { AuthorizeAccessComponent } from './AuthorizeAccess/AuthorizeAccess.component';
 import { RevokeAccessComponent } from './RevokeAccess/RevokeAccess.component';
 import { AddRecordTransactionComponent } from './AddRecordTransaction/AddRecordTransaction.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: LandingpageComponent },
   { path: 'Doctor', component: DoctorComponent },
   { path: 'Patient', component: PatientComponent },
   { path: 'AuthorizeAccess', component: AuthorizeAccessComponent },
   { path: 'RevokeAccess', component: RevokeAccessComponent },
   { path: 'AddRecordTransaction', component: AddRecordTransactionComponent },
-  { path: 'PatientView', component: PatientviewComponent},
   { path: '**', redirectTo: '' }
 ];
 

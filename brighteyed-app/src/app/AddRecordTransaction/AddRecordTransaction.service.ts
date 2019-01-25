@@ -22,7 +22,7 @@ import 'rxjs/Rx';
 @Injectable()
 export class AddRecordTransactionService {
 
-  private NAMESPACE = 'AddRecordTransaction';
+  private NAMESPACE = 'org.brighteyed.network.AddRecordTransaction';
 
   constructor(private dataService: DataService<AddRecordTransaction>) {
   };

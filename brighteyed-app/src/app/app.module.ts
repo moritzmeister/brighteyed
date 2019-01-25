@@ -28,7 +28,7 @@ import { PatientComponent } from './Patient/Patient.component';
 import { AuthorizeAccessComponent } from './AuthorizeAccess/AuthorizeAccess.component';
 import { RevokeAccessComponent } from './RevokeAccess/RevokeAccess.component';
 import { AddRecordTransactionComponent } from './AddRecordTransaction/AddRecordTransaction.component';
-import { PatientviewComponent } from './patientview/patientview.component';
+import { LandingpageComponent } from './landingpage/landingpage.component';
 
   @NgModule({
   declarations: [
@@ -39,7 +39,7 @@ import { PatientviewComponent } from './patientview/patientview.component';
     AuthorizeAccessComponent,
     RevokeAccessComponent,
     AddRecordTransactionComponent,
-    PatientviewComponent
+    LandingpageComponent
   ],
   imports: [
     BrowserModule,

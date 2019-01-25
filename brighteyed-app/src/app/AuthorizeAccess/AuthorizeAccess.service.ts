@@ -22,7 +22,7 @@ import 'rxjs/Rx';
 @Injectable()
 export class AuthorizeAccessService {
 
-  private NAMESPACE = 'AuthorizeAccess';
+  private NAMESPACE = 'org.brighteyed.network.AuthorizeAccess';
 
   constructor(private dataService: DataService<AuthorizeAccess>) {
   };

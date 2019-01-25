@@ -22,7 +22,7 @@ import 'rxjs/Rx';
 @Injectable()
 export class RevokeAccessService {
 
-  private NAMESPACE = 'RevokeAccess';
+  private NAMESPACE = 'org.brighteyed.network.RevokeAccess';
 
   constructor(private dataService: DataService<RevokeAccess>) {
   };

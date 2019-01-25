@@ -22,7 +22,7 @@ import 'rxjs/Rx';
 @Injectable()
 export class PatientService {
 
-  private NAMESPACE = 'Patient';
+  private NAMESPACE = 'org.brighteyed.network.Patient';
 
   constructor(private dataService: DataService<Patient>) {
   };
