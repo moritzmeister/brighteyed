@@ -33,7 +33,7 @@
         } else {
             $("#mainNav").removeClass("navbar-shrink");
         }
-        /*
+
         var nav = $("#mainNav");
         if (nav.length) {
             if ($("#mainNav").offset().top > 100) {
@@ -43,7 +43,7 @@
             }
 
         }
-        */
+
 
     };
     // Collapse now if page is not at top
