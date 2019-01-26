@@ -1,0 +1,4 @@
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+	color: rgb(255, 255, 255);
+	background-color: #37b4b4 !important;
+}
