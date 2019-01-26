@@ -11,6 +11,22 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+	<div class="container">
+		<a class="navbar-brand js-scroll-trigger block-white" href="#page-top"><img class="ifmg-fluid" src="assets/img/logo_base_sm.png" alt=""></a>
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="btn btn-primary btn-sm" href="javascript:;">Patient Dashboard</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
 <div class="modal fade" id="addParticipantModal" tabindex="-1" role="dialog" aria-labelledby="addParticipantModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -21,84 +37,84 @@
         </div>
         <form [formGroup]="myForm">
           <div class="modal-body">
-  
-  
-            
-  
-              
+
+
+
+
+
                 <div class="form-group text-left">
                   <label for="authorized">authorized</label>
-                  
+
                     <input formControlName="authorized" type="text" class="form-control">
-                  
+
                 </div>
-              
-            
-  
-              
+
+
+
+
                 <div class="form-group text-left">
                   <label for="myRecords">myRecords</label>
-                  
+
                       <textarea formControlName="myRecords" class="form-control" rows="3"></textarea>
-                  
+
                 </div>
-              
-            
-  
-              
+
+
+
+
                 <div class="form-group text-left">
                   <label for="nie">nie</label>
-                  
+
                     <input formControlName="nie" type="text" class="form-control">
-                  
+
                 </div>
-              
-            
-  
-              
+
+
+
+
                 <div class="form-group text-left">
                   <label for="firstName">firstName</label>
-                  
+
                     <input formControlName="firstName" type="text" class="form-control">
-                  
+
                 </div>
-              
-            
-  
-              
+
+
+
+
                 <div class="form-group text-left">
                   <label for="lastName">lastName</label>
-                  
+
                     <input formControlName="lastName" type="text" class="form-control">
-                  
+
                 </div>
-              
-            
-  
-              
+
+
+
+
                 <div class="form-group text-left">
                   <label for="email">email</label>
-                  
+
                     <input formControlName="email" type="text" class="form-control">
-                  
+
                 </div>
-              
-            
-  
+
+
+
           </div>
           <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
             <button (click)="addParticipant(myForm);" type="submit" class="btn btn-success" data-dismiss="modal">Confirm</button>
-  
+
           </div>
         </form>
       </div>
     </div>
   </div>
-  
-  
-  
-  
+
+
+
+
   <div class="modal fade" id="updateParticipantModal" tabindex="-1" role="dialog" aria-labelledby="updateParticipantModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -108,67 +124,67 @@
         </div>
         <form [formGroup]="myForm">
           <div class="modal-body">
-  
-  
-            
+
+
+
               <div class="form-group text-left">
                 <label for="authorized">authorized</label>
-  
-                
+
+
                   <input [ngModel]="authorized"formControlName="authorized" type="text" class="form-control">
-                
-  
+
+
               </div>
-            
+
               <div class="form-group text-left">
                 <label for="myRecords">myRecords</label>
-  
-                
-                  
+
+
+
                     <textarea [ngModel]="myRecords" formControlName="myRecords" class="form-control" rows="3"></textarea>
-                  
-                
-  
+
+
+
               </div>
-            
+
               <div class="form-group text-left">
                 <label for="nie">nie</label>
-  
-                
-                  <input [ngModel]="nie" formControlName="nie" class="form-control" disabled="disabled">  
-                
-  
+
+
+                  <input [ngModel]="nie" formControlName="nie" class="form-control" disabled="disabled">
+
+
               </div>
-            
+
               <div class="form-group text-left">
                 <label for="firstName">firstName</label>
-  
-                
+
+
                   <input [ngModel]="firstName"formControlName="firstName" type="text" class="form-control">
-                
-  
+
+
               </div>
-            
+
               <div class="form-group text-left">
                 <label for="lastName">lastName</label>
-  
-                
+
+
                   <input [ngModel]="lastName"formControlName="lastName" type="text" class="form-control">
-                
-  
+
+
               </div>
-            
+
               <div class="form-group text-left">
                 <label for="email">email</label>
-  
-                
+
+
                   <input [ngModel]="email"formControlName="email" type="text" class="form-control">
-                
-  
+
+
               </div>
-            
-  
-  
+
+
+
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -178,9 +194,9 @@
       </div>
     </div>
   </div>
-  
-  
-  
+
+
+
   <div class="modal fade" id="deleteParticipantModal" tabindex="-1" role="dialog" aria-labelledby="deleteParticipantModalLabel">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -200,22 +216,22 @@
       </div>
     </div>
   </div>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
+
   <div class="container">
       <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
           <strong>Error:</strong> {{errorMessage}}
       </div>
-    
+
     <div class="row">
       <div class="col-md-9">
           <h1 class="participant-title" id='participantName'>Patient</h1>
@@ -237,38 +253,38 @@
         <table class="table table-responsive">
           <thead class="thead">
             <tr class="thead-cols">
-              
+
                   <th class="info">authorized</th>
-              
+
                   <th class="info">myRecords</th>
-              
+
                   <th class="info">nie</th>
-              
+
                   <th class="info">firstName</th>
-              
+
                   <th class="info">lastName</th>
-              
+
                   <th class="info">email</th>
-              
+
                 <th class="info-actions">Actions</th>
             </tr>
           </thead>
           <tbody>
             <tr *ngFor="let participant of allParticipants">
-  
-              
+
+
                   <td class="participant-properties">{{participant.authorized}}</td>
-              
+
                   <td class="participant-properties">{{participant.myRecords}}</td>
-              
+
                   <td class="participant-properties">{{participant.nie}}</td>
-              
+
                   <td class="participant-properties">{{participant.firstName}}</td>
-              
+
                   <td class="participant-properties">{{participant.lastName}}</td>
-              
+
                   <td class="participant-properties">{{participant.email}}</td>
-              
+
               <td>
                 <button (click)="getForm(participant.nie);" type="button" class="btn btn-update" data-toggle="modal" data-target="#updateParticipantModal">
                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -282,7 +298,7 @@
                  </g>
                  </svg>
                 </button>
-  
+
                 <button (click)="setId(participant.nie);" type="button" class="btn btn-delete" data-toggle="modal" data-target="#deleteParticipantModal">
                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                     width="13.8px" height="16px" viewBox="0 0 65.9 76.2" style="enable-background:new 0 0 65.9 76.2;" xml:space="preserve">

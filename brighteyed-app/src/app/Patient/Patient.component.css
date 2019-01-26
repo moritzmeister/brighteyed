@@ -2,9 +2,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  * http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -17,18 +17,9 @@
     padding-right: 72px;
 }
 
-.btn-primary {
-    background: #844AE4;
-    border-radius: 4px;
-    border: 0px;
-    font-size: 14px;
-    color: #FFFFFF;
-    letter-spacing: 0;
-    line-height: 10px;
-    height: 40px;
-    width: 163px;
-    float: right;
-    margin-top: 5%;
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+	color: rgb(255, 255, 255);
+	background-color: #37b4b4 !important;
 }
 
 .table > thead > tr > th {
@@ -72,7 +63,7 @@
     color: #393939;
     height: 42px;
     border: 1px solid #ffffff;
-    box-shadow: inset 0 0px 0px rgba(0,0,0,.075); 
+    box-shadow: inset 0 0px 0px rgba(0,0,0,.075);
     border-radius: 4px;
     resize: none;
 
@@ -121,8 +112,8 @@ label {
 }
 .btn-default:focus{
     background-color: #fff;
-    border-color: #4d21a8;  
-    color: #4d21a8;      
+    border-color: #4d21a8;
+    color: #4d21a8;
 }
 .participant-title{
     font-family: inherit;
@@ -161,15 +152,15 @@ label {
     fill: currentColor;
 }
 
-/***.participant-properties:hover, .participant-properties:hover span{  
+/***.participant-properties:hover, .participant-properties:hover span{
 overflow: visible;
 position: relative;
- make readable design 
+ make readable design
 background-color: #FFFFFF;
 border: 1px solid #FFFFFF;
 border-radius: 4px;
 padding: 3px;
-/* compensate padding and border size to avoid jerking 
+/* compensate padding and border size to avoid jerking
 margin-left: -4px;
 }
 ***/
