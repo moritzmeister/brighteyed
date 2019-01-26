@@ -20,6 +20,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { DataService } from './data.service';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { HttpClientModule } from '@angular/common/http'
 
 
 import { DoctorComponent } from './Doctor/Doctor.component';
@@ -29,11 +30,14 @@ import { AuthorizeAccessComponent } from './AuthorizeAccess/AuthorizeAccess.comp
 import { RevokeAccessComponent } from './RevokeAccess/RevokeAccess.component';
 import { AddRecordTransactionComponent } from './AddRecordTransaction/AddRecordTransaction.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
+import { LoginComponent } from './login/login.component';
+import { UploadService } from './upload.service';
 
   @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    LoginComponent,
     DoctorComponent,
     PatientComponent,
     AuthorizeAccessComponent,
@@ -46,10 +50,12 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
-    DataService
+    DataService,
+    UploadService
   ],
   bootstrap: [AppComponent]
 })

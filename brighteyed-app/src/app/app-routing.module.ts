@@ -17,6 +17,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
+import { LoginComponent} from './login/login.component';
 
 
 import { DoctorComponent } from './Doctor/Doctor.component';
@@ -28,6 +29,7 @@ import { AddRecordTransactionComponent } from './AddRecordTransaction/AddRecordT
 
 const routes: Routes = [
   { path: '', component: LandingpageComponent },
+  { path: 'Login', component: LoginComponent},
   { path: 'Doctor', component: DoctorComponent },
   { path: 'Patient', component: PatientComponent },
   { path: 'AuthorizeAccess', component: AuthorizeAccessComponent },
