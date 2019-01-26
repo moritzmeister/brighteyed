@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UploadService } from 'app/upload.service';
 import {HttpEventType, HttpResponse} from '@angular/common/http';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-login',
@@ -13,8 +16,14 @@ export class LoginComponent implements OnInit {
   showFile: boolean;
   showName: boolean;
   success: boolean;
+  data: any;
 
-  constructor(private uploadService: UploadService) { this.showFile = false; this.showName = true; this.success = false; }
+
+  constructor(private uploadService: UploadService) {
+    this.showFile = false;
+    this.showName = true;
+    this.success = false;
+  }
 
   ngOnInit() {
   }
