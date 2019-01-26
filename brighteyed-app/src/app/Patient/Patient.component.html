@@ -11,6 +11,7 @@
  See the License for the specific language governing permissions and
  limitations under the License.
 -->
+<div class="content-div">
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
   <div class="container">
     <a class="navbar-brand js-scroll-trigger block-white" href="#page-top"><img class="ifmg-fluid" src="assets/img/logo_base_sm.png"
@@ -35,6 +36,8 @@
   </div>
 </nav>
 
+<div class="containerContent">
+	<div class="container-content">
 <!--
 <section>
     <div class="modal fade" id="addParticipantModal" tabindex="-1" role="dialog" aria-labelledby="addParticipantModalLabel">
@@ -47,75 +50,75 @@
             </div>
             <form [formGroup]="myForm">
               <div class="modal-body">
-      
-      
-      
-      
-      
+
+
+
+
+
                 <div class="form-group text-left">
                   <label for="authorized">authorized</label>
-      
+
                   <input formControlName="authorized" type="text" class="form-control">
-      
+
                 </div>
-      
-      
-      
-      
+
+
+
+
                 <div class="form-group text-left">
                   <label for="myRecords">myRecords</label>
-      
+
                   <textarea formControlName="myRecords" class="form-control" rows="3"></textarea>
-      
+
                 </div>
-      
-      
-      
-      
+
+
+
+
                 <div class="form-group text-left">
                   <label for="nie">nie</label>
-      
+
                   <input formControlName="nie" type="text" class="form-control">
-      
+
                 </div>
-      
-      
-      
-      
+
+
+
+
                 <div class="form-group text-left">
                   <label for="firstName">firstName</label>
-      
+
                   <input formControlName="firstName" type="text" class="form-control">
-      
+
                 </div>
-      
-      
-      
-      
+
+
+
+
                 <div class="form-group text-left">
                   <label for="lastName">lastName</label>
-      
+
                   <input formControlName="lastName" type="text" class="form-control">
-      
+
                 </div>
-      
-      
-      
-      
+
+
+
+
                 <div class="form-group text-left">
                   <label for="email">email</label>
-      
+
                   <input formControlName="email" type="text" class="form-control">
-      
+
                 </div>
-      
-      
-      
+
+
+
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                 <button (click)="addParticipant(myForm);" type="submit" class="btn btn-success" data-dismiss="modal">Confirm</button>
-      
+
               </div>
             </form>
           </div>
@@ -123,7 +126,6 @@
       </div>
 </section>
 -->
-<section>
   <div class="container">
     <div class="modal fade" id="updateParticipantModal" tabindex="-1" role="dialog" aria-labelledby="updateParticipantModalLabel">
       <div class="modal-dialog" role="document">
@@ -135,7 +137,7 @@
           <form [formGroup]="myForm">
             <div class="modal-body">
               <div class="form-group text-left">
-                <label for="authorized">authorized</label>
+                <label for="authorized">Authorized</label>
                 <input [ngModel]="authorized" formControlName="authorized" type="text" class="form-control">
               </div>
               <div class="form-group text-left">
@@ -194,8 +196,8 @@
       </div>
 
       <div class="row">
-        <div class="col-md-6">
-          <h1 class="participant-title" id='participantName'>Patient</h1>
+        <div>
+          <h1 class="participant-title" id='participantName'>Welcome Patient! These doctors can view your clinical data</h1>
         </div>
 
         <!--
@@ -220,17 +222,17 @@
             <thead class="thead">
               <tr class="thead-cols">
 
-                <th class="info">authorized</th>
+                <th class="info">Authorized</th>
 
-                <th class="info">myRecords</th>
+                <th class="info">Doctor</th>
 
-                <th class="info">nie</th>
+                <th class="info">NIE</th>
 
-                <th class="info">firstName</th>
+                <th class="info">First Name</th>
 
-                <th class="info">lastName</th>
+                <th class="info">Last Name</th>
 
-                <th class="info">email</th>
+                <th class="info">Email</th>
 
                 <th class="info-actions">Actions</th>
               </tr>
@@ -287,4 +289,6 @@
       </div>
     </div>
   </div>
-</section>
+	</div>
+</div>
+</div>
