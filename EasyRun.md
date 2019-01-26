@@ -14,7 +14,7 @@ composer network install --card PeerAdmin@hlfv1 --archiveFile brighteyed-network
 composer network start --networkName brighteyed-network --networkVersion 0.0.1 --networkAdmin admin --networkAdminEnrollSecret adminpw --card PeerAdmin@hlfv1 --file networkadmin.card
 composer card import --file networkadmin.card
 composer network ping --card admin@brighteyed-network
-composer-rest-server -c admin@my-network -m true
+composer-rest-server -c admin@brighteyed-network -m true
 
 ### 3. Start Node.js web-app:
 From the root folder of repo run:
