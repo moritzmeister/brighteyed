@@ -24,7 +24,7 @@
       administration.</h4>
     <h5>1. Please enter a name under which you want to save the business card in your wallet:</h5>
     <input *ngIf="showName" id="name" [(ngModel)]="name" />
-    <button *ngIf="showName" (click)="sendValues()">Save Name</button>
+    <button class="btn btn-primary" *ngIf="showName" (click)="sendValues()">Save Name</button>
     <h5 *ngIf="showFile || success">Name: {{name}}</h5>
   </div>
 
