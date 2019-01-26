@@ -11,6 +11,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+ /*
 .container {
     margin-left: 72px;
     margin-right: 32px;
@@ -180,6 +181,8 @@ label {
     float: right;
     margin: 32px;
 }
+
+*/
 
 /***.transaction-properties:hover, .transaction-properties:hover span{  
 overflow: visible;

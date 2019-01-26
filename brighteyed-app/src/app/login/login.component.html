@@ -1,3 +1,5 @@
+<div style="background-image: url(assets/img/eye.jpg);
+width: 100%; height: 100%;">
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
   <div class="container">
       <a class="navbar-brand js-scroll-trigger block-white" href="#page-top"><img class="ifmg-fluid" src="assets/img/logo_base_sm.png" alt=""></a>
@@ -17,26 +19,27 @@
 
 <section>
   <div class="container">
-    <h2>Welcome to Brighteyed!</h2>
-    <h4>In order to use the platform, you need a valid business card, that should be provided to you by the
+    <h2><b>Welcome to Brighteyed!</b></h2>
+    <h4>To use the platform you need a valid business card, which should be provided to you by the
       administration.</h4>
-    <h4>1. Please enter a name under which you want to save the business card in your wallet:</h4>
+    <h4 style="margin-top: 30px;">1. Please enter a name under which you want to save the business card in your wallet:</h4>
     <input *ngIf="showName" id="name" [(ngModel)]="name" />
     <button *ngIf="showName" (click)="sendValues()">Save Name</button>
     <h3 *ngIf="showFile || success">Name: {{name}}</h3>
   </div>
 
-  <div class="container">
-    <h4>2. Please choose the business card to add to your wallet:</h4>
+  <div *ngIf="showFile" class="container">
+    <h4 style="margin-top: 30px;">2. Please choose the business card to add to your wallet:</h4>
   </div>
   <div *ngIf="showFile" class="container">
     <input type="file" (change)="selectFile($event)" placeholder="Upload file" accept=".card">
   </div>
   <div *ngIf="success" class="container">
-    <h4>File upload successfull!</h4>
+    <h4 style="margin-top: 30px;">File upload successfull!</h4>
     <a class="btn btn-primary btn-sm js-scroll-trigger" [routerLink]="['/Patient']">I am a patient</a>
     <a class="btn btn-primary btn-sm js-scroll-trigger" [routerLink]="['/Doctor']">I am a doctor</a>
   </div>
 
 
 </section>
+</div>
