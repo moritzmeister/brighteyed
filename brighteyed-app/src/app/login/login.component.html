@@ -22,6 +22,12 @@
 
 
   <section>
+    <div class="container">
+        <input id="name" [(ngModel)]="name"/>
+        <button (click)="sendValues()">Save Name</button>
+        <h3>{{name}}</h3>
+    </div>
+
 <div class="container">
   <input type="file" (change)="selectFile($event)" placeholder="Upload file" accept=".card">
 </div>

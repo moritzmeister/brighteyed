@@ -9,9 +9,15 @@ import {HttpEventType, HttpResponse} from '@angular/common/http';
 })
 export class LoginComponent implements OnInit {
 
+  name: string;
+
   constructor(private uploadService: UploadService) { }
 
   ngOnInit() {
+  }
+
+  sendValues(): void {
+    console.log(this.name);
   }
 
    // At the drag drop area
@@ -41,7 +47,7 @@ export class LoginComponent implements OnInit {
     }
     let file: File = files[0];
 
-    this.uploadService.uploadFile("http://localhost:3000/api/wallet/import", file)
+    this.uploadService.uploadFile("http://localhost:3000/api/wallet/import", file, this.name)
       .subscribe(
         event => {
           if (event.type == HttpEventType.UploadProgress) {
