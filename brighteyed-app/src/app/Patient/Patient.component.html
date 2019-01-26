@@ -197,8 +197,7 @@
 
           <div class="row">
             <div>
-              <h1 class="participant-title" id='participantName'>Welcome Patient! These doctors can view your clinical
-                data</h1>
+              <h1 class="participant-title" id='participantName'>Welcome Patient! This is your brighteyed data</h1>
             </div>
 
             <!--
@@ -223,9 +222,9 @@
                 <thead class="thead">
                   <tr class="thead-cols">
 
-                    <th class="info">Authorized</th>
+                    <th class="info">Authorized Doctors</th>
 
-                    <th class="info">Doctor</th>
+                    <th class="info">My Records</th>
 
                     <th class="info">NIE</th>
 
@@ -287,6 +286,53 @@
                 </tbody>
               </table>
             </div>
+
+
+            <br>
+            <div class="row">
+              <div class="col-md-12">
+                <table class="table table-responsive">
+                  <thead class="thead">
+                    <tr class="thead-cols">
+  
+                      <th class="info">Authorized Doctors</th>
+  
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let doctor of me.authorized">
+
+                      <td class="participant-properties">{{doctor}}</td>
+  
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <br>
+              <div class="row">
+                <div class="col-md-12">
+                  <table class="table table-responsive">
+                    <thead class="thead">
+                      <tr class="thead-cols">
+    
+                        <th class="info">My Records</th>
+    
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let record of me.myRecords">
+  
+                        <td class="participant-properties">{{record}}</td>
+    
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+
+
+
           </div>
         </div>
       </div>

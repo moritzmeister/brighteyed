@@ -31,6 +31,7 @@ export class PatientComponent implements OnInit {
   private participant;
   private currentId;
   private errorMessage;
+  private me;
 
   authorized = new FormControl('', Validators.required);
   myRecords = new FormControl('', Validators.required);
@@ -65,6 +66,8 @@ export class PatientComponent implements OnInit {
         tempList.push(participant);
       });
       this.allParticipants = tempList;
+      this.me = this.allParticipants[0];
+      console.log(this.me);
     })
     .catch((error) => {
       if (error === 'Server error') {
