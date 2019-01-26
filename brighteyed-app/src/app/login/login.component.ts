@@ -10,13 +10,18 @@ import {HttpEventType, HttpResponse} from '@angular/common/http';
 export class LoginComponent implements OnInit {
 
   name: string;
+  showFile: boolean;
+  showName: boolean;
+  success: boolean;
 
-  constructor(private uploadService: UploadService) { }
+  constructor(private uploadService: UploadService) { this.showFile = false; this.showName = true; this.success = false; }
 
   ngOnInit() {
   }
 
   sendValues(): void {
+    this.showFile = true;
+    this.showName = false;
     console.log(this.name);
   }
 
@@ -54,6 +59,8 @@ export class LoginComponent implements OnInit {
             const percentDone = Math.round(100 * event.loaded / event.total);
             console.log(`File is ${percentDone}% loaded.`);
           } else if (event instanceof HttpResponse) {
+            this.success = true;
+            this.showFile = false;
             console.log('File is completely loaded!');
           }
         },
