@@ -16,6 +16,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { PatientService } from './Patient.service';
 import 'rxjs/add/operator/toPromise';
+import { Doctor } from 'app/org.brighteyed.network';
 
 @Component({
   selector: 'app-patient',
@@ -32,6 +33,7 @@ export class PatientComponent implements OnInit {
   private currentId;
   private errorMessage;
   private me;
+  myDoctors: Doctor[] = [];
 
   authorized = new FormControl('', Validators.required);
   myRecords = new FormControl('', Validators.required);
@@ -67,7 +69,13 @@ export class PatientComponent implements OnInit {
       });
       this.allParticipants = tempList;
       this.me = this.allParticipants[0];
+
+      for(let doc of this.me.authorized) {
+        this.servicePatient.getDoctor(doc).toPromise().then((resultDoc) => this.myDoctors.push(resultDoc));
+      }
       console.log(this.me);
+      console.log(this.myDoctors);
+      console.log(this.myRecords);
     })
     .catch((error) => {
       if (error === 'Server error') {

@@ -15,7 +15,7 @@
 import { Injectable } from '@angular/core';
 import { DataService } from '../data.service';
 import { Observable } from 'rxjs/Observable';
-import { Patient } from '../org.brighteyed.network';
+import { Patient, Doctor } from '../org.brighteyed.network';
 import 'rxjs/Rx';
 
 // Can be injected into a constructor
@@ -24,7 +24,9 @@ export class PatientService {
 
   private NAMESPACE = 'org.brighteyed.network.Patient';
 
-  constructor(private dataService: DataService<Patient>) {
+  private DOCNAMESPACE = 'org.brighteyed.network.Doctor';
+
+  constructor(private dataService: DataService<Patient>, private docService: DataService<Doctor>) {
   };
 
   public getAll(): Observable<Patient[]> {
@@ -33,6 +35,10 @@ export class PatientService {
 
   public getparticipant(id: any): Observable<Patient> {
     return this.dataService.getSingle(this.NAMESPACE, id);
+  }
+
+  public getDoctor(id: any): Observable<Doctor> {
+    return this.docService.getSingle(this.DOCNAMESPACE, id);
   }
 
   public addParticipant(itemToAdd: any): Observable<Patient> {

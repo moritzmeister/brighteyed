@@ -11,6 +11,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+.table-responsive {
+	display: table;
+}
+
+h1 {
+	text-align: center;
+	padding: 20px;
+}
+
 .close {
 	margin: 0;
 }
@@ -25,23 +35,24 @@
 
 .container {
     width: 100%;
-    padding-left: 72px;
-    padding-right: 72px;
 }
 
 .containerContent {
 	width: 100%;
-	height: 100%;
+	height: fit-content;
 	padding-top: 100px;
 }
 
 .container-content {
-	width: fit-content;
+	width: 65%;
 	height: 95%;
 	margin: 0 auto;
 	background: #FFFFFF;
 	padding-top: 2.5%;
 	padding-bottom: 2.5%;
+	padding-left: 5%;
+	padding-right: 5%;
+	align-content: center;
 }
 
 h1 {
