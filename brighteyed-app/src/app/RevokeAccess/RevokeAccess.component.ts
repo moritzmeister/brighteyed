@@ -99,7 +99,7 @@ export class RevokeAccessComponent implements OnInit {
   addTransaction(form: any): Promise<any> {
     this.Transaction = {
       $class: 'org.brighteyed.network.RevokeAccess',
-      'doctor': this.doctor.value,
+      'doctor': 'org.brighteyed.network.Doctor#'+this.doctor.value,
       'transactionId': this.transactionId.value,
       'timestamp': this.timestamp.value
     };

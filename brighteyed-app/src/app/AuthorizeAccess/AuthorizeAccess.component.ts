@@ -99,7 +99,7 @@ export class AuthorizeAccessComponent implements OnInit {
   addTransaction(form: any): Promise<any> {
     this.Transaction = {
       $class: 'org.brighteyed.network.AuthorizeAccess',
-      'doctor': this.doctor.value,
+      'doctor': 'org.brighteyed.network.Doctor#'+this.doctor.value,
       'transactionId': this.transactionId.value,
       'timestamp': this.timestamp.value
     };
