@@ -199,7 +199,6 @@
           <h1 class="participant-title" id='participantName'>Welcome Patient! Here are your authorized Doctors</h1>
 
           <div class="row">
-            <div class="col-md-12">
               <table class="table table-responsive">
                 <thead class="thead">
                   <tr class="thead-cols">
@@ -267,7 +266,6 @@
                   </tr>
                 </tbody>
               </table>
-            </div>
 					</div>
 				</div>
 
@@ -442,7 +440,7 @@
 							<tr class="thead-cols">
 
                 <th class="info">Authorized Doctor</th>
-                
+
                 <th class="info">First Name</th>
 
                 <th class="info">Last Name</th>
@@ -455,7 +453,7 @@
 							<tr *ngFor="let doctor of myDoctors">
 
                 <td class="participant-properties">{{doctor.nie}}</td>
-                
+
                 <td class="participant-properties">{{doctor.firstName}}</td>
 
                 <td class="participant-properties">{{doctor.lastName}}</td>
