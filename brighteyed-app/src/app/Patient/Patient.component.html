@@ -441,14 +441,26 @@
 							<thead class="thead">
 							<tr class="thead-cols">
 
-								<th class="info">Authorized Doctors</th>
+                <th class="info">Authorized Doctor</th>
+                
+                <th class="info">First Name</th>
+
+                <th class="info">Last Name</th>
+
+                <th class="info">Email</th>
 
 							</tr>
 							</thead>
 							<tbody>
-							<tr *ngFor="let doctor of me.authorized">
+							<tr *ngFor="let doctor of myDoctors">
 
-								<td class="participant-properties">{{doctor}}</td>
+                <td class="participant-properties">{{doctor.nie}}</td>
+                
+                <td class="participant-properties">{{doctor.firstName}}</td>
+
+                <td class="participant-properties">{{doctor.lastName}}</td>
+
+                <td class="participant-properties">{{doctor.email}}</td>
 
 							</tr>
 							</tbody>
@@ -632,7 +644,7 @@
 							<tbody>
 							<tr *ngFor="let record of me.myRecords">
 
-								<td class="participant-properties">{{record}}</td>
+								<td class="participant-properties">{{record.incident}}</td>
 
 							</tr>
 							</tbody>
