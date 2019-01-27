@@ -39,9 +39,8 @@
 							<strong>Error:</strong> {{errorMessage}}
 					</div>
 
-				<div class="row">
-					<h1 class="participant-title" id='participantName'>Welcome Doctor! This your information:</h1>
-				</div>
+				<h1 class="participant-title" id='participantName'>Welcome Doctor! This your information:</h1>
+
 				<br>
 				<div class="row">
 					<div class="col-md-12">
@@ -101,7 +100,7 @@
 										 </svg>
 										</button>
 										-->
-										
+
 									</td>
 								</tr>
 							</tbody>
@@ -110,47 +109,51 @@
 				</div>
 			</div>
 
-			<br>
+		</div>
+		<br>
+		<div class="container-content">
+
 			<div class="container">
-					<div *ngIf="errorMessage" class="alert alert-danger" role="alert">
-						<strong>Error:</strong> {{errorMessage}}
-					</div>
-
-					<h1 class="participant-title" id='participantName'>These are your patients:</h1>
-
-					<br>
-					<div class="row">
-						<table class="table table-responsive">
-							<thead class="thead">
-							<tr class="thead-cols">
-
-                <th class="info">NIE</th>
-
-                <th class="info">First Name</th>
-
-                <th class="info">Last Name</th>
-
-                <th class="info">Email</th>
-
-							</tr>
-							</thead>
-							<tbody>
-							<tr *ngFor="let patient of myPatientsArr">
-
-                <td class="participant-properties">{{patient.nie}}</td>
-
-                <td class="participant-properties">{{patient.firstName}}</td>
-
-                <td class="participant-properties">{{patient.lastName}}</td>
-
-                <td class="participant-properties">{{patient.email}}</td>
-
-							</tr>
-							</tbody>
-						</table>
-					</div>
+				<div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+					<strong>Error:</strong> {{errorMessage}}
 				</div>
+
+				<h1 class="participant-title" id='participantName'>These are your patients:</h1>
+
+				<br>
+				<div class="row">
+					<table class="table table-responsive">
+						<thead class="thead">
+						<tr class="thead-cols">
+
+							<th class="info">NIE</th>
+
+							<th class="info">First Name</th>
+
+							<th class="info">Last Name</th>
+
+							<th class="info">Email</th>
+
+						</tr>
+						</thead>
+						<tbody>
+						<tr *ngFor="let patient of myPatientsArr">
+
+							<td class="participant-properties">{{patient.nie}}</td>
+
+							<td class="participant-properties">{{patient.firstName}}</td>
+
+							<td class="participant-properties">{{patient.lastName}}</td>
+
+							<td class="participant-properties">{{patient.email}}</td>
+
+						</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
 
 		</div>
   </div>
+
 </div>
