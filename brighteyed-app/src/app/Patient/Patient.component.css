@@ -11,6 +11,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+.row {
+	display: ;
+}
+
+h1 {
+	text-align: center;
+	padding: 20px;
+}
+
 .close {
 	margin: 0;
 }
@@ -27,12 +37,12 @@
 
 .containerContent {
 	width: 100%;
-	height: 100%;
+	height: fit-content;
 	padding-top: 100px;
 }
 
 .container-content {
-	width: fit-content;
+	width: 55%;
 	height: 95%;
 	margin: 0 auto;
 	background: #FFFFFF;
