@@ -206,8 +206,6 @@
 
                     <th class="info">Authorized Doctors</th>
 
-                    <th class="info">My Records</th>
-
                     <th class="info">NIE</th>
 
                     <th class="info">First Name</th>
@@ -224,8 +222,6 @@
 
 
                     <td class="participant-properties">{{participant.authorized}}</td>
-
-                    <td class="participant-properties">{{participant.myRecords}}</td>
 
                     <td class="participant-properties">{{participant.nie}}</td>
 
@@ -624,15 +620,19 @@
 						<table class="table table-responsive">
 							<thead class="thead">
 							<tr class="thead-cols">
-
-								<th class="info">My Records</th>
-
+                <th class="info">Date</th>
+                <th class="info">Incident</th>
+								<th class="info">Prescriptions</th>
+								<th class="info">Doctor</th>
 							</tr>
 							</thead>
 							<tbody>
 							<tr *ngFor="let record of me.myRecords">
 
-								<td class="participant-properties">{{record}}</td>
+								<td class="participant-properties">{{record.date | date}}</td>
+								<td class="participant-properties">{{record.incident}}</td>
+								<td class="participant-properties">{{record.prescriptions}}</td>
+								<td class="participant-properties">{{record.doctor.substring(39, 43)}}</td>
 
 							</tr>
 							</tbody>
