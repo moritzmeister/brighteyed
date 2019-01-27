@@ -34,12 +34,17 @@
 }
 
 .container-content {
-	width: 60%;
+	width: fit-content;
 	height: 95%;
 	margin: 0 auto;
 	background: #FFFFFF;
 	padding-top: 2.5%;
 	padding-bottom: 2.5%;
+}
+
+h1 {
+	text-align: center;
+	padding: 20px;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
