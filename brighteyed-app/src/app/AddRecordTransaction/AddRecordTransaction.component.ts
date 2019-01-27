@@ -33,6 +33,10 @@ export class AddRecordTransactionComponent implements OnInit {
   private errorMessage;
 
   addedRecord = new FormControl('', Validators.required);
+  doctor = new FormControl('', Validators.required);
+  date = new FormControl('', Validators.required);
+  incident = new FormControl('', Validators.required);
+  prescriptions = new FormControl('', Validators.required);
   patient = new FormControl('', Validators.required);
   transactionId = new FormControl('', Validators.required);
   timestamp = new FormControl('', Validators.required);
@@ -41,6 +45,10 @@ export class AddRecordTransactionComponent implements OnInit {
   constructor(private serviceAddRecordTransaction: AddRecordTransactionService, fb: FormBuilder) {
     this.myForm = fb.group({
       addedRecord: this.addedRecord,
+      doctor: this.doctor,
+      data: this.date,
+      incident: this.incident,
+      prescriptions: this.prescriptions,
       patient: this.patient,
       transactionId: this.transactionId,
       timestamp: this.timestamp
@@ -101,14 +109,24 @@ export class AddRecordTransactionComponent implements OnInit {
   addTransaction(form: any): Promise<any> {
     this.Transaction = {
       $class: 'org.brighteyed.network.AddRecordTransaction',
-      'addedRecord': this.addedRecord.value,
-      'patient': this.patient.value,
+      'addedRecord': {
+        $class: 'org.brighteyed.network.Record',
+        "date": this.date.value,
+        "incident": this.incident.value,
+        "prescriptions": "["+this.prescriptions.value+"]",
+        "doctor": "resource:org.brighteyed.network.Doctor#"+this.doctor.value
+      },
+      'patient': 'org.brighteyed.network.Patient#'+this.patient.value,
       'transactionId': this.transactionId.value,
-      'timestamp': this.timestamp.value
+      'timestamp': this.timestamp.value 
     };
 
     this.myForm.setValue({
       'addedRecord': null,
+      'doctor': null,
+      'data': null,
+      'incident': null,
+      'prescriptions': null,
       'patient': null,
       'transactionId': null,
       'timestamp': null
@@ -120,6 +138,10 @@ export class AddRecordTransactionComponent implements OnInit {
       this.errorMessage = null;
       this.myForm.setValue({
         'addedRecord': null,
+        'doctor': null,
+        'data': null,
+        'incident': null,
+        'prescriptions': null,
         'patient': null,
         'transactionId': null,
         'timestamp': null
