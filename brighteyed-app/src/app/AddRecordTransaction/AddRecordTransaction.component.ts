@@ -34,7 +34,7 @@ export class AddRecordTransactionComponent implements OnInit {
 
   addedRecord = new FormControl('', Validators.required);
   doctor = new FormControl('', Validators.required);
-  date = new FormControl('', Validators.required);
+  date = new FormControl('');
   incident = new FormControl('', Validators.required);
   prescriptions = new FormControl('', Validators.required);
   patient = new FormControl('', Validators.required);
@@ -111,12 +111,12 @@ export class AddRecordTransactionComponent implements OnInit {
       $class: 'org.brighteyed.network.AddRecordTransaction',
       'addedRecord': {
         $class: 'org.brighteyed.network.Record',
-        "date": this.date.value,
+        "date": "2019-01-29T10:00:00Z",
         "incident": this.incident.value,
-        "prescriptions": "["+this.prescriptions.value+"]",
+        "prescriptions": "[]",
         "doctor": "resource:org.brighteyed.network.Doctor#"+this.doctor.value
       },
-      'patient': 'org.brighteyed.network.Patient#'+this.patient.value,
+      'patient': 'resource:org.brighteyed.network.Patient#'+this.patient.value,
       'transactionId': this.transactionId.value,
       'timestamp': this.timestamp.value 
     };
