@@ -1,0 +1,45 @@
+<div class="content-div">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+  <div class="container">
+      <a class="navbar-brand js-scroll-trigger block-white" href="#page-top"><img class="ifmg-fluid" src="assets/img/logo_base_sm.png" alt=""></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                  <a class="btn btn-primary btn-sm" href="javascript:;">Logged In</a>
+              </li>
+          </ul>
+      </div>
+  </div>
+</nav>
+
+
+<section>
+  <div class="container">
+    <h2><b>WELCOME TO BRIGHTEYED!</b></h2>
+
+    <h4>In order to use the platform, you need a valid business card, that should be provided to you by the
+      administrator</h4>
+    <h5>1. Please enter a name under which you want to save the business card in your wallet:</h5>
+    <input *ngIf="showName" id="name" [(ngModel)]="name" />
+    <button class="btn btn-primary" *ngIf="showName" (click)="sendValues()">Save Name</button>
+    <h5 *ngIf="showFile || success">Name: {{name}}</h5>
+  </div>
+
+  <div *ngIf="showFile" class="container">
+		<h5>2. Please choose the business card to add to your wallet:</h5>
+    <input type="file" (change)="selectFile($event)" placeholder="Upload file" accept=".card">
+  </div>
+
+	<div *ngIf="success" class="container">
+		<h5>2. Please choose the business card to add to your wallet:</h5>
+		<h5>File upload successfull!</h5>
+		<a class="btn btn-primary btn-sm js-scroll-trigger" [routerLink]="['/Patient']">I am a patient</a>
+		<a class="btn btn-primary btn-sm js-scroll-trigger" [routerLink]="['/Doctor']">I am a doctor</a>
+	</div>
+
+</section>
+
+</div>
